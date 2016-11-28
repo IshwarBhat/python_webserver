@@ -49,6 +49,12 @@ class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         if self.path.endswith(".css"):
             mimetype='text/css'
             replyFlag = True
+        if self.path.endswith(".mp3"):
+            mimetype='audio/mpeg'
+            replyFlag = True
+        if self.path.endswith(".mp4"):
+            mimetype='video/mp4'
+            replyFlag = True
 
         # Send the static file
         if replyFlag:
